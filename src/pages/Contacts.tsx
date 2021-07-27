@@ -1,6 +1,6 @@
-import { IonAlert, IonItemDivider, IonLabel, IonTextarea, IonList, IonItem, IonInput, IonContent, IonFooter, IonImg, IonPage, IonHeader, IonButtons, IonBackButton,IonToolbar,IonTitle } from '@ionic/react'
-import React, {useState} from 'react'
-import {useHistory} from 'react-router-dom'
+import { IonAlert, IonItemDivider, IonLabel, IonTextarea, IonList, IonItem, IonInput, IonContent, IonFooter, IonImg, IonPage, IonHeader, IonButtons, IonBackButton, IonToolbar, IonTitle } from '@ionic/react'
+import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 
 const Contacts: React.FC = () => {
     const [name, setName] = useState<string>()
@@ -19,10 +19,17 @@ const Contacts: React.FC = () => {
         }
     }
 
-    return(
+    return (
         <IonPage>
+            <IonHeader class="ion-no-border">
+                <IonToolbar>
+                    <IonButtons slot='start'>
+                        <IonBackButton />
+                    </IonButtons>
+                    <IonTitle class="ion-title-center">Contact Us</IonTitle>
+                </IonToolbar>
+            </IonHeader>
             <IonContent class="ion-padding">
-                <h1>Contacts</h1>
                 <IonAlert
                     isOpen={messageAlert}
                     onDidDismiss={() => showMessageAlert(false)}
@@ -34,21 +41,21 @@ const Contacts: React.FC = () => {
                 <IonList>
                     <IonItem>
                         <IonInput value={name} placeholder='Name'
-                            onIonChange={e=>setName(e.detail.value!)} />
+                            onIonChange={e => setName(e.detail.value!)} />
                     </IonItem>
                     <IonItemDivider />
                     <IonItem>
                         <IonInput value={email} placeholder='Email'
-                            onIonChange={e=>setEmail(e.detail.value!)} />
+                            onIonChange={e => setEmail(e.detail.value!)} />
                     </IonItem>
                     <IonItemDivider />
                     <IonItem>
                         <IonTextarea rows={15} value={message} placeholder='Message'
-                            onIonChange={e=>setMessage(e.detail.value!)} />
+                            onIonChange={e => setMessage(e.detail.value!)} />
                     </IonItem>
                     <IonItemDivider />
 
-                    <IonItem button onClick={e => {sendMessage()}}>
+                    <IonItem button onClick={e => { sendMessage() }}>
                         <IonLabel class="ion-text-center">
                             Send
                         </IonLabel>

@@ -10,7 +10,7 @@ const CustomHeader: React.FC = () => {
                     <IonButton routerLink="/about">About</IonButton>
                 </IonButtons>
                 <IonButtons slot="end">
-                    <IonButton>Contact</IonButton>
+                    <IonButton routerLink="/contacts">Contacts</IonButton>
                 </IonButtons>
                 <IonImg class="logoImg" src="assets/shapes.svg" />
                 <IonTitle class="ion-text-center">Ion Demo App</IonTitle>

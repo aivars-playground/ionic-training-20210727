@@ -5,6 +5,7 @@ import Home from './pages/Home';
 
 import Custom from './pages/Custom'
 import About from './pages/About'
+import Contacts from './pages/Contacts'
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -40,6 +41,9 @@ const App: React.FC = () => (
         </Route>
         <Route exact path='/custom'>
           <Custom />
+        </Route>
+        <Route exact path='/contacts'>
+          <Contacts />
         </Route>
       </IonRouterOutlet>
     </IonReactRouter>
